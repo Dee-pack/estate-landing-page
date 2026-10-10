@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haven Estates | Find Your Next Home</title>
+  <meta name="description"
+    content="Browse homes to buy or rent, or get a free valuation. Trusted local agents who answer the same day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stage">
+    <section class="hero" id="hero">
+      <!-- Fallback artwork, hidden automatically once hero.jpg loads -->
+      <svg class="art" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <rect x="0" y="330" width="1200" height="90" fill="#243044" />
+        <rect x="60" y="230" width="560" height="100" fill="#eef1f5" />
+        <rect x="60" y="220" width="560" height="14" fill="#d5dbe4" />
+        <g fill="#9fb3c9">
+          <rect x="100" y="256" width="60" height="62" />
+          <rect x="180" y="256" width="60" height="62" />
+          <rect x="260" y="256" width="60" height="62" />
+          <rect x="340" y="256" width="60" height="62" />
+          <rect x="420" y="256" width="60" height="62" />
+        </g>
+        <rect x="640" y="130" width="440" height="200" fill="#f7f8fa" />
+        <rect x="620" y="118" width="480" height="22" fill="#8a6a45" />
+        <rect x="680" y="160" width="360" height="170" fill="#7d96b2" />
+        <g fill="#b88f5a">
+          <rect x="700" y="160" width="26" height="170" />
+          <rect x="780" y="160" width="26" height="170" />
+          <rect x="860" y="160" width="26" height="170" />
+          <rect x="940" y="160" width="26" height="170" />
+          <rect x="1010" y="160" width="26" height="170" />
+        </g>
+        <rect x="1100" y="250" width="14" height="80" fill="#4a3b2c" />
+        <circle cx="1107" cy="240" r="42" fill="#5c7d5a" />
+      </svg>
+
+      <header class="nav">
+        <a href="#" class="logo"><i><svg viewBox="0 0 24 24">
+              <path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z" />
+            </svg></i> Haven Estates</a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="#listings">Buy</a>
+          <a href="#listings">Rent</a>
+          <a href="#contact">Sell</a>
+          <a href="#why">Why us</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-end">
+          <a href="#" class="login">Login</a>
+          <a href="#contact" class="btn btn-light btn-sm">Talk to an agent</a>
+        </div>
+      </header>
+
+      <div class="hero-body">
+        <div>
+          <h1>Find the home that fits your life.</h1>
+          <p class="sub">Search homes to buy or rent, or get a free valuation. Our local agents reply the same day.</p>
+        </div>
+        <div class="hero-stats">
+          <div><strong>350+</strong><span>Properties listed</span></div>
+          <div><strong>1,200+</strong><span>Happy clients</span></div>
+        </div>
+      </div>
+
+      <div class="search-area">
+        <div class="tabs" role="tablist" aria-label="What would you like to do">
+          <button class="tab" role="tab" aria-selected="true" data-mode="buy">Buy</button>
+          <button class="tab" role="tab" aria-selected="false" data-mode="rent">Rent</button>
+          <button class="tab" role="tab" aria-selected="false" data-mode="sell">Sell</button>
+        </div>
+        <form class="search" id="searchForm">
+          <div class="field">
+            <label for="city">Location</label>
+            <select id="city">
+              <option value="any">Any area</option>
+              <option>Lekki</option>
+              <option>Victoria Island</option>
+              <option>Ikeja</option>
+              <option>Abuja</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="type">Property type</label>
+            <select id="type">
+              <option value="any">Any type</option>
+              <option>Apartment</option>
+              <option>Duplex</option>
+              <option>Terrace</option>
+              <option>Detached house</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Budget</label>
+            <select id="budget">
+              <option value="any">Any budget</option>
+              <option value="low">Under &#8358;50M (rent under &#8358;5M)</option>
+              <option value="mid">&#8358;50M to &#8358;150M (rent &#8358;5M to &#8358;10M)</option>
+              <option value="high">Above &#8358;150M (rent above &#8358;10M)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-dark" id="searchBtn">Search properties</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <!-- ===== LISTINGS ===== -->
+    <section class="section" id="listings">
+      <div class="wrap">
+        <div class="head">
+          <h2>Featured properties</h2>
+          <p id="resultNote">Hand-picked homes from our current listings. Use the search above to narrow them down.</p>
+        </div>
+        <div class="grid" id="grid">
+          <article class="card" data-mode="buy" data-city="Lekki" data-type="Duplex" data-budget="mid">
+            <div class="photo"><span class="tag">For sale</span></div>
+            <div class="info">
+              <div class="price">&#8358;120,000,000</div>
+              <h3>Modern 4-bed duplex</h3>
+              <p>Lekki Phase 1, Lagos</p>
+              <div class="specs"><span><b>4</b> beds</span><span><b>5</b> baths</span><span><b>380</b> m&sup2;</span>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-mode="rent" data-city="Victoria Island" data-type="Apartment" data-budget="mid">
+            <div class="photo"><span class="tag">For rent</span></div>
+            <div class="info">
+              <div class="price">&#8358;8,500,000 <small>/ year</small></div>
+              <h3>Serviced 2-bed apartment</h3>
+              <p>Victoria Island, Lagos</p>
+              <div class="specs"><span><b>2</b> beds</span><span><b>2</b> baths</span><span><b>140</b> m&sup2;</span>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-mode="buy" data-city="Ikeja" data-type="Terrace" data-budget="low">
+            <div class="photo"><span class="tag">For sale</span></div>
+            <div class="info">
+              <div class="price">&#8358;45,000,000</div>
+              <h3>3-bed terrace in a gated estate</h3>
+              <p>GRA, Ikeja</p>
+              <div class="specs"><span><b>3</b> beds</span><span><b>3</b> baths</span><span><b>210</b> m&sup2;</span>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-mode="buy" data-city="Abuja" data-type="Detached house" data-budget="high">
+            <div class="photo"><span class="tag">For sale</span></div>
+            <div class="info">
+              <div class="price">&#8358;260,000,000</div>
+              <h3>5-bed detached house with pool</h3>
+              <p>Maitama, Abuja</p>
+              <div class="specs"><span><b>5</b> beds</span><span><b>6</b> baths</span><span><b>620</b> m&sup2;</span>
+              </div>
+            </div>
+          </article>
+          <article class="card" data-mode="rent" data-city="Lekki" data-type="Apartment" data-budget="low">
+            <div class="photo"><span class="tag">For rent</span></div>
+            <div class="info">
+              <div class="price">&#8358;3,800,000 <small>/ year</small></div>
+              <h3>Bright 1-bed apartment</h3>
+              <p>Lekki, Lagos</p>
+              <div class="specs"><span><b>1</b> bed</span><span><b>1</b> bath</span><span><b>75</b> m&sup2;</span></div>
+            </div>
+          </article>
+          <article class="card" data-mode="rent" data-city="Abuja" data-type="Duplex" data-budget="high">
+            <div class="photo"><span class="tag">For rent</span></div>
+            <div class="info">
+              <div class="price">&#8358;14,000,000 <small>/ year</small></div>
+              <h3>4-bed duplex with boys' quarters</h3>
+              <p>Asokoro, Abuja</p>
+              <div class="specs"><span><b>4</b> beds</span><span><b>4</b> baths</span><span><b>330</b> m&sup2;</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="empty" id="empty">No properties match that search yet. <a href="#contact"
+            style="color:var(--ink);font-weight:700;text-decoration:underline">Tell us what you need</a> and we'll look
+          for you.</div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section" id="why">
+      <div class="wrap why">
+        <div>
+          <h2>Property deals without the guesswork.</h2>
+          <p>We keep the process clear from the first viewing to the day you get your keys.</p>
+        </div>
+        <div class="points">
+          <div class="point">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            <div>
+              <h3>Verified listings</h3>
+              <p>Every property is inspected and its documents checked before we list it.</p>
+            </div>
+          </div>
+          <div class="point">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            <div>
+              <h3>Same-day replies</h3>
+              <p>Message us in the morning and book a viewing for the same afternoon.</p>
+            </div>
+          </div>
+          <div class="point">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 17 9 11l4 4 8-8" />
+              <path d="M15 7h6v6" />
+            </svg>
+            <div>
+              <h3>Honest pricing advice</h3>
+              <p>We tell you what a home is really worth, whether you're buying or selling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Buying, renting or selling? Let's talk.</h2>
+        <p>Send us a few details and an agent will message you on WhatsApp, usually within the hour.</p>
+      </div>
+      <form id="contactForm">
+        <input type="text" id="cName" placeholder="Your name" required>
+        <select id="cGoal">
+          <option>I want to buy</option>
+          <option>I want to rent</option>
+          <option>I want to sell my property</option>
+          <option>I want a free valuation</option>
+        </select>
+        <input type="text" id="cArea" placeholder="Preferred area (e.g. Lekki)">
+        <button type="submit" class="btn">Message an agent</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div><strong>Haven Estates</strong>Reg. No. 000000<br>&copy; 2026 All rights reserved</div>
+      <div><strong>Office</strong>24 Admiralty Way, Your City</div>
+      <div><strong>Contact</strong>+234 800 000 0000<br>hello@havenestates.com</div>
+    </div>
+  </footer>
+
+  <a href="#contact" class="wa" id="waBtn">Chat on WhatsApp</a>
+
+  <script>
+    // Change this to the client's WhatsApp number (country code, no + or spaces)
+    const WHATSAPP = "2348000000000";
+    document.getElementById("waBtn").href = "https://wa.me/" + WHATSAPP;
+
+    // Hide the fallback artwork once the hero photo loads
+    const probe = new Image();
+    probe.onload = () => document.getElementById("hero").classList.add("has-photo");
+    probe.src = "hero.jpg"; // keep in sync with --hero-image if you rename it
+
+    // Tabs
+    let mode = "buy";
+    const tabs = document.querySelectorAll(".tab");
+    const btn = document.getElementById("searchBtn");
+    tabs.forEach(t => t.addEventListener("click", () => {
+      mode = t.dataset.mode;
+      tabs.forEach(x => x.setAttribute("aria-selected", x === t ? "true" : "false"));
+      btn.textContent = mode === "sell" ? "Get a free valuation" : "Search properties";
+    }));
+
+    // Search filters the listing cards
+    document.getElementById("searchForm").addEventListener("submit", e => {
+      e.preventDefault();
+      if (mode === "sell") { document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); return; }
+      const city = document.getElementById("city").value;
+      const type = document.getElementById("type").value;
+      const budget = document.getElementById("budget").value;
+      let shown = 0;
+      document.querySelectorAll("#grid .card").forEach(c => {
+        const ok = c.dataset.mode === mode
+          && (city === "any" || c.dataset.city === city)
+          && (type === "any" || c.dataset.type === type)
+          && (budget === "any" || c.dataset.budget === budget);
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      document.getElementById("empty").classList.toggle("show", shown === 0);
+      document.getElementById("resultNote").textContent = shown + (shown === 1 ? " property" : " properties") + " found for your search.";
+      document.getElementById("listings").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Contact form opens WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("cName").value.trim();
+      const goal = document.getElementById("cGoal").value;
+      const area = document.getElementById("cArea").value.trim();
+      let msg = "Hi, I'm " + name + ". " + goal + ".";
+      if (area) msg += " Area: " + area + ".";
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
+    });
+  </script>
+</body>
+
+</html>
